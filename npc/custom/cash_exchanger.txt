@@ -1,0 +1,48 @@
+
+prontera,155,171,5	script	Cash Trader	757,{
+
+do{
+	.@menu = select( "Zeny to Cash","Cash to Zeny","Close" );
+	switch( .@menu ){
+		Case 1:
+			mes "Each Cash point costs 1000";
+			mes "1000z -> 1 Cash";
+			if( Zeny <  1000 ){
+				mes "Sorry... You don't have enough zeny.";
+			}else{
+				.@maximum = Zeny / 1000;
+				mes "You can get maximum of ^FF0000"+.@maximum+"^000000"+" Cash points";
+				input .@amount,0,.@maximum;
+				if( .@amount ) {
+					.@total = ( .@amount * 1000 );
+					Zeny -= .@total;
+					#CASHPOINTS += .@amount;
+					message strcharinfo(0),"Exchanged "+.@total +" Zeny to "+.@amount+" Cash Points";
+				}
+			}
+			break;
+		Case 2:
+			mes "Each Cash point gives 1000z";
+			mes "1 Cash -> 1000z";
+			if( #CASHPOINTS <  1 ){
+				mes "^FF0000[ERROR]^000000 You don't have enough Cash points.";
+			}else{
+				.@maximum = #CASHPOINTS;
+				mes "You can trade a maximum of ^FF0000"+.@maximum+"^000000"+" Cash Points";
+				input .@amount,0,.@maximum;
+				if( .@amount ) {
+					.@total = ( .@amount * 1000 );
+					Zeny += .@total;
+					#CASHPOINTS -= .@amount;
+					message strcharinfo(0),"Exchanged "+.@total+" Cash Points to "+.@amount+" Zeny";
+				}
+			}
+			break;
+		default: break;
+	}
+	next;
+}while( .@menu != 3 );
+mes "Thank you.";
+close;
+
+}

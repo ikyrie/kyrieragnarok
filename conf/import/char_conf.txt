@@ -1,0 +1,5 @@
+userid: username
+passwd: password
+char_ip: 189.79.66.138
+login_ip: 127.0.0.1
+server_name: Kyrie Server

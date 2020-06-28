@@ -1,0 +1,15 @@
+prontera,160,187,5	script	Buffer	834,{
+
+percentheal 100,100;
+skilleffect 383,0; sc_start SC_WINDWALK,3600000,5;
+skilleffect 33,0; sc_start SC_ANGELUS,3600000,10;
+skilleffect 45,0; sc_start SC_CONCENTRATE,3600000,10;
+skilleffect 74,0; sc_start SC_MAGNIFICAT,3600000,5;
+skilleffect 75,0; sc_start SC_GLORIA,3600000,5;
+skilleffect 66,0; sc_start SC_IMPOSITIO,3600000,5;
+skilleffect 34,0; sc_start SC_BLESSING,3600000,10;
+skilleffect 29,0; sc_start SC_INCREASEAGI,3600000,10;
+skilleffect 357,0; sc_start SC_CONCENTRATION,3600000,5;
+skilleffect 361,0; sc_start SC_ASSUMPTIO,3600000,5;
+close;
+}
